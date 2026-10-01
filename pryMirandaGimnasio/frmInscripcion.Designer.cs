@@ -1,6 +1,6 @@
 ﻿namespace pryMirandaGimnasio
 {
-    partial class Form1
+    partial class frmInscripcion
     {
         /// <summary>
         ///  Required designer variable.
@@ -47,6 +47,8 @@
             label6 = new Label();
             rbotarjeta = new RadioButton();
             rbtefectivo = new RadioButton();
+            btncalcular = new Button();
+            btnlimpiar = new Button();
             gpbdatos.SuspendLayout();
             gpoplanturno.SuspendLayout();
             gpopago.SuspendLayout();
@@ -80,7 +82,7 @@
             gpbdatos.Location = new Point(12, 12);
             gpbdatos.Name = "gpbdatos";
             gpbdatos.Size = new Size(526, 100);
-            gpbdatos.TabIndex = 2;
+            gpbdatos.TabIndex = 0;
             gpbdatos.TabStop = false;
             gpbdatos.Text = "DATOS PERSONALES";
             // 
@@ -90,7 +92,7 @@
             chkestudiante.Location = new Point(178, 57);
             chkestudiante.Name = "chkestudiante";
             chkestudiante.Size = new Size(81, 19);
-            chkestudiante.TabIndex = 5;
+            chkestudiante.TabIndex = 0;
             chkestudiante.Text = "Estudiante";
             chkestudiante.UseVisualStyleBackColor = true;
             // 
@@ -120,7 +122,7 @@
             gpoplanturno.Location = new Point(12, 134);
             gpoplanturno.Name = "gpoplanturno";
             gpoplanturno.Size = new Size(526, 100);
-            gpoplanturno.TabIndex = 3;
+            gpoplanturno.TabIndex = 1;
             gpoplanturno.TabStop = false;
             gpoplanturno.Text = "PLAN Y TURNOS";
             // 
@@ -175,7 +177,7 @@
             lblturno.AutoSize = true;
             lblturno.Location = new Point(172, 28);
             lblturno.Name = "lblturno";
-            lblturno.Size = new Size(41, 15);
+            lblturno.Size = new Size(42, 15);
             lblturno.TabIndex = 5;
             lblturno.Text = "Turno:";
             lblturno.Click += label4_Click;
@@ -199,7 +201,7 @@
             gpopago.Location = new Point(12, 253);
             gpopago.Name = "gpopago";
             gpopago.Size = new Size(526, 100);
-            gpopago.TabIndex = 4;
+            gpopago.TabIndex = 0;
             gpopago.TabStop = false;
             gpopago.Text = "FORMA DE PAGO";
             // 
@@ -227,7 +229,7 @@
             rbotarjeta.AutoSize = true;
             rbotarjeta.Location = new Point(10, 47);
             rbotarjeta.Name = "rbotarjeta";
-            rbotarjeta.Size = new Size(59, 19);
+            rbotarjeta.Size = new Size(60, 19);
             rbotarjeta.TabIndex = 1;
             rbotarjeta.TabStop = true;
             rbotarjeta.Text = "Tarjeta";
@@ -244,19 +246,41 @@
             rbtefectivo.Text = "Efectivo";
             rbtefectivo.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // btncalcular
             // 
+            btncalcular.Location = new Point(161, 369);
+            btncalcular.Name = "btncalcular";
+            btncalcular.Size = new Size(110, 25);
+            btncalcular.TabIndex = 2;
+            btncalcular.Text = "Calcular";
+            btncalcular.UseVisualStyleBackColor = true;
+            // 
+            // btnlimpiar
+            // 
+            btnlimpiar.Location = new Point(277, 369);
+            btnlimpiar.Name = "btnlimpiar";
+            btnlimpiar.Size = new Size(110, 25);
+            btnlimpiar.TabIndex = 3;
+            btnlimpiar.Text = "Limpiar";
+            btnlimpiar.UseVisualStyleBackColor = true;
+            // 
+            // frmInscripcion
+            // 
+            AcceptButton = btncalcular;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(553, 365);
+            ClientSize = new Size(553, 415);
+            Controls.Add(btnlimpiar);
+            Controls.Add(btncalcular);
             Controls.Add(gpopago);
             Controls.Add(gpoplanturno);
             Controls.Add(gpbdatos);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            Name = "Form1";
+            Name = "frmInscripcion";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gimnasio Siglo — Inscripción";
+            Load += this.frmInscripcion_Load;
             gpbdatos.ResumeLayout(false);
             gpbdatos.PerformLayout();
             gpoplanturno.ResumeLayout(false);
@@ -287,5 +311,7 @@
         private RadioButton rbtefectivo;
         private ComboBox cbocuotas;
         private Label label6;
+        private Button btncalcular;
+        private Button btnlimpiar;
     }
 }
