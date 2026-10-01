@@ -99,6 +99,7 @@
             // txtedad
             // 
             txtedad.Location = new Point(66, 54);
+            txtedad.MaxLength = 3;
             txtedad.Name = "txtedad";
             txtedad.Size = new Size(100, 23);
             txtedad.TabIndex = 4;
@@ -106,6 +107,7 @@
             // txtnombre
             // 
             txtnombre.Location = new Point(66, 22);
+            txtnombre.MaxLength = 30;
             txtnombre.Name = "txtnombre";
             txtnombre.Size = new Size(229, 23);
             txtnombre.TabIndex = 3;
@@ -119,7 +121,7 @@
             gpoplanturno.Controls.Add(cboplan);
             gpoplanturno.Controls.Add(lblturno);
             gpoplanturno.Controls.Add(lblplan);
-            gpoplanturno.Location = new Point(12, 134);
+            gpoplanturno.Location = new Point(12, 132);
             gpoplanturno.Name = "gpoplanturno";
             gpoplanturno.Size = new Size(526, 100);
             gpoplanturno.TabIndex = 1;
@@ -129,6 +131,7 @@
             // txtmeses
             // 
             txtmeses.Location = new Point(395, 25);
+            txtmeses.MaxLength = 2;
             txtmeses.Name = "txtmeses";
             txtmeses.Size = new Size(100, 23);
             txtmeses.TabIndex = 10;
@@ -198,7 +201,7 @@
             gpopago.Controls.Add(label6);
             gpopago.Controls.Add(rbotarjeta);
             gpopago.Controls.Add(rbtefectivo);
-            gpopago.Location = new Point(12, 253);
+            gpopago.Location = new Point(12, 252);
             gpopago.Name = "gpopago";
             gpopago.Size = new Size(526, 100);
             gpopago.TabIndex = 0;
@@ -263,6 +266,7 @@
             btnlimpiar.TabIndex = 3;
             btnlimpiar.Text = "Limpiar";
             btnlimpiar.UseVisualStyleBackColor = true;
+            btnlimpiar.Click += btnlimpiar_Click;
             // 
             // frmInscripcion
             // 
@@ -280,7 +284,7 @@
             Name = "frmInscripcion";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gimnasio Siglo — Inscripción";
-            Load += this.frmInscripcion_Load;
+            Load += frmInscripcion_Load;
             gpbdatos.ResumeLayout(false);
             gpbdatos.PerformLayout();
             gpoplanturno.ResumeLayout(false);

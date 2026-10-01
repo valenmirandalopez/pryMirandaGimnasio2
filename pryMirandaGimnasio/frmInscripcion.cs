@@ -8,6 +8,14 @@ namespace pryMirandaGimnasio
             InitializeComponent();
         }
 
+
+
+        private void frmInscripcion_Load(object sender, EventArgs e)
+        {
+            EstadoInicial();
+
+
+        }
         private void EstadoInicial()
         {
             txtnombre.Text = "";
@@ -30,11 +38,6 @@ namespace pryMirandaGimnasio
             txtnombre.Focus();
         }
 
-        private void frmInscripcion_Load(object sender, EventArgs e)
-        {
-            EstadoInicial();
-
-        }
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -44,6 +47,11 @@ namespace pryMirandaGimnasio
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            EstadoInicial();
         }
     }
 }
