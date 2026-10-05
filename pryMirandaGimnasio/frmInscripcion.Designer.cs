@@ -103,6 +103,8 @@
             txtedad.Name = "txtedad";
             txtedad.Size = new Size(100, 23);
             txtedad.TabIndex = 4;
+            txtedad.TextChanged += txtedad_TextChanged;
+            txtedad.KeyPress += txtedad_KeyPress;
             // 
             // txtnombre
             // 
@@ -111,6 +113,7 @@
             txtnombre.Name = "txtnombre";
             txtnombre.Size = new Size(229, 23);
             txtnombre.TabIndex = 3;
+            txtnombre.KeyPress += txtnombre_KeyPress;
             // 
             // gpoplanturno
             // 
@@ -135,6 +138,7 @@
             txtmeses.Name = "txtmeses";
             txtmeses.Size = new Size(100, 23);
             txtmeses.TabIndex = 10;
+            txtmeses.KeyPress += txtmeses_KeyPress;
             // 
             // chkcasillero
             // 
