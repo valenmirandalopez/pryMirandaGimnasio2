@@ -45,7 +45,7 @@
             gpopago = new GroupBox();
             cbocuotas = new ComboBox();
             label6 = new Label();
-            rbotarjeta = new RadioButton();
+            rbttarjeta = new RadioButton();
             rbtefectivo = new RadioButton();
             btncalcular = new Button();
             btnlimpiar = new Button();
@@ -113,6 +113,7 @@
             txtnombre.Name = "txtnombre";
             txtnombre.Size = new Size(229, 23);
             txtnombre.TabIndex = 3;
+            txtnombre.TextChanged += txtnombre_TextChanged;
             txtnombre.KeyPress += txtnombre_KeyPress;
             // 
             // gpoplanturno
@@ -138,6 +139,7 @@
             txtmeses.Name = "txtmeses";
             txtmeses.Size = new Size(100, 23);
             txtmeses.TabIndex = 10;
+            txtmeses.TextChanged += txtmeses_TextChanged;
             txtmeses.KeyPress += txtmeses_KeyPress;
             // 
             // chkcasillero
@@ -203,7 +205,7 @@
             // 
             gpopago.Controls.Add(cbocuotas);
             gpopago.Controls.Add(label6);
-            gpopago.Controls.Add(rbotarjeta);
+            gpopago.Controls.Add(rbttarjeta);
             gpopago.Controls.Add(rbtefectivo);
             gpopago.Location = new Point(12, 252);
             gpopago.Name = "gpopago";
@@ -231,16 +233,16 @@
             label6.TabIndex = 2;
             label6.Text = "Cuotas:";
             // 
-            // rbotarjeta
+            // rbttarjeta
             // 
-            rbotarjeta.AutoSize = true;
-            rbotarjeta.Location = new Point(10, 47);
-            rbotarjeta.Name = "rbotarjeta";
-            rbotarjeta.Size = new Size(60, 19);
-            rbotarjeta.TabIndex = 1;
-            rbotarjeta.TabStop = true;
-            rbotarjeta.Text = "Tarjeta";
-            rbotarjeta.UseVisualStyleBackColor = true;
+            rbttarjeta.AutoSize = true;
+            rbttarjeta.Location = new Point(10, 47);
+            rbttarjeta.Name = "rbttarjeta";
+            rbttarjeta.Size = new Size(60, 19);
+            rbttarjeta.TabIndex = 1;
+            rbttarjeta.TabStop = true;
+            rbttarjeta.Text = "Tarjeta";
+            rbttarjeta.UseVisualStyleBackColor = true;
             // 
             // rbtefectivo
             // 
@@ -261,6 +263,7 @@
             btncalcular.TabIndex = 2;
             btncalcular.Text = "Calcular";
             btncalcular.UseVisualStyleBackColor = true;
+            btncalcular.Click += btncalcular_Click_1;
             // 
             // btnlimpiar
             // 
@@ -315,7 +318,7 @@
         private TextBox txtmeses;
         private CheckBox chkcasillero;
         private GroupBox gpopago;
-        private RadioButton rbotarjeta;
+        private RadioButton rbttarjeta;
         private RadioButton rbtefectivo;
         private ComboBox cbocuotas;
         private Label label6;
