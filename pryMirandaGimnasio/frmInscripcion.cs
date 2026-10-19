@@ -34,6 +34,8 @@ namespace pryMirandaGimnasio
         }
         //Declara array de 1 dimension
         string[] vecSocio = new string[3];
+        // indice para el array 
+        int indeRegistro = 0;
 
         public frmInscripcion()
         {
@@ -281,10 +283,10 @@ namespace pryMirandaGimnasio
             valorCuota = total / cantidadCuotas;
 
             //mostrar resultado final
-            // 1. Declarar la variable basada en la estructura
+            // Declarar la variable basada en la estructura
             SOCIO socio;
 
-            // 2. Cargar los datos simples
+            //  Cargar los datos simples
             socio.nombre = nombre;
             socio.edad = edad;
             socio.plan = cboplan.Text;
@@ -293,7 +295,22 @@ namespace pryMirandaGimnasio
             socio.total = total;
             socio.valorCuota = valorCuota;
 
-            // 3. Determinar Categoría (Estudiante, Jubilado o Estándar)
+            //Grabar array
+            //Concatenar lo que tengo en el struct
+            //El indice tiene que incrementarse con cada click
+            //y tiene tope, 3 elementos (no permitir grabar mas)
+            vecSocio[0] = socio.nombre;
+            indeRegistro += 1;
+
+            if (indeRegistro == vecSocio.Length)
+            {
+                MessageBox.Show("Array completo");
+                btncalcular.Visible = false;
+            }
+
+
+
+            //  Determinar Categoría (Estudiante, Jubilado o Estándar)
             if (chkestudiante.Checked)
             {
                 socio.categoria = "Estudiante";
@@ -307,7 +324,7 @@ namespace pryMirandaGimnasio
                 socio.categoria = "Estándar";
             }
 
-            // 4. Determinar Forma de Pago
+            //  Determinar Forma de Pago
             if (rbtefectivo.Checked)
             {
                 socio.formaPago = "Efectivo";
@@ -317,7 +334,7 @@ namespace pryMirandaGimnasio
                 socio.formaPago = "Tarjeta (" + cbocuotas.SelectedItem.ToString() + " cuotas)";
             }
 
-            // 5. Armar el mensaje con los datos del socio
+            //  Armar el mensaje con los datos del socio
             string mensaje = "DATOS DEL SOCIO\n\n" +
                              "Nombre: " + socio.nombre + "\n" +
                              "Edad: " + socio.edad + " años\n" +

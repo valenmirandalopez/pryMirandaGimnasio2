@@ -49,6 +49,7 @@
             rbtefectivo = new RadioButton();
             btncalcular = new Button();
             btnlimpiar = new Button();
+            button1 = new Button();
             gpbdatos.SuspendLayout();
             gpoplanturno.SuspendLayout();
             gpopago.SuspendLayout();
@@ -257,7 +258,7 @@
             // 
             // btncalcular
             // 
-            btncalcular.Location = new Point(161, 369);
+            btncalcular.Location = new Point(193, 359);
             btncalcular.Name = "btncalcular";
             btncalcular.Size = new Size(110, 25);
             btncalcular.TabIndex = 2;
@@ -267,7 +268,7 @@
             // 
             // btnlimpiar
             // 
-            btnlimpiar.Location = new Point(277, 369);
+            btnlimpiar.Location = new Point(309, 359);
             btnlimpiar.Name = "btnlimpiar";
             btnlimpiar.Size = new Size(110, 25);
             btnlimpiar.TabIndex = 3;
@@ -275,12 +276,22 @@
             btnlimpiar.UseVisualStyleBackColor = true;
             btnlimpiar.Click += btnlimpiar_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(425, 359);
+            button1.Name = "button1";
+            button1.Size = new Size(110, 25);
+            button1.TabIndex = 4;
+            button1.Text = "Consultar";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // frmInscripcion
             // 
             AcceptButton = btncalcular;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(553, 415);
+            Controls.Add(button1);
             Controls.Add(btnlimpiar);
             Controls.Add(btncalcular);
             Controls.Add(gpopago);
@@ -324,5 +335,6 @@
         private Label label6;
         private Button btncalcular;
         private Button btnlimpiar;
+        private Button button1;
     }
 }
