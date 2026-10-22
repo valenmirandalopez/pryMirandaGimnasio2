@@ -49,7 +49,8 @@
             rbtefectivo = new RadioButton();
             btncalcular = new Button();
             btnlimpiar = new Button();
-            button1 = new Button();
+            btnconsultar = new Button();
+            lstconsultar = new ListBox();
             gpbdatos.SuspendLayout();
             gpoplanturno.SuspendLayout();
             gpopago.SuspendLayout();
@@ -219,7 +220,7 @@
             // 
             cbocuotas.DropDownStyle = ComboBoxStyle.DropDownList;
             cbocuotas.FormattingEnabled = true;
-            cbocuotas.Items.AddRange(new object[] { "1 cuota/s", "3 cuota/s", "6 cuota/s" });
+            cbocuotas.Items.AddRange(new object[] { "1", "3", "6" });
             cbocuotas.Location = new Point(181, 21);
             cbocuotas.Name = "cbocuotas";
             cbocuotas.Size = new Size(121, 23);
@@ -244,6 +245,7 @@
             rbttarjeta.TabStop = true;
             rbttarjeta.Text = "Tarjeta";
             rbttarjeta.UseVisualStyleBackColor = true;
+            rbttarjeta.CheckedChanged += rbttarjeta_CheckedChanged;
             // 
             // rbtefectivo
             // 
@@ -276,22 +278,33 @@
             btnlimpiar.UseVisualStyleBackColor = true;
             btnlimpiar.Click += btnlimpiar_Click;
             // 
-            // button1
+            // btnconsultar
             // 
-            button1.Location = new Point(425, 359);
-            button1.Name = "button1";
-            button1.Size = new Size(110, 25);
-            button1.TabIndex = 4;
-            button1.Text = "Consultar";
-            button1.UseVisualStyleBackColor = true;
+            btnconsultar.Location = new Point(425, 359);
+            btnconsultar.Name = "btnconsultar";
+            btnconsultar.Size = new Size(110, 25);
+            btnconsultar.TabIndex = 4;
+            btnconsultar.Text = "Consultar";
+            btnconsultar.UseVisualStyleBackColor = true;
+            btnconsultar.Click += btnconsultar_Click;
+            // 
+            // lstconsultar
+            // 
+            lstconsultar.FormattingEnabled = true;
+            lstconsultar.Location = new Point(12, 358);
+            lstconsultar.Name = "lstconsultar";
+            lstconsultar.Size = new Size(152, 34);
+            lstconsultar.TabIndex = 5;
+            lstconsultar.SelectedIndexChanged += lstconsultar_SelectedIndexChanged;
             // 
             // frmInscripcion
             // 
             AcceptButton = btncalcular;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(553, 415);
-            Controls.Add(button1);
+            ClientSize = new Size(552, 415);
+            Controls.Add(lstconsultar);
+            Controls.Add(btnconsultar);
             Controls.Add(btnlimpiar);
             Controls.Add(btncalcular);
             Controls.Add(gpopago);
@@ -335,6 +348,7 @@
         private Label label6;
         private Button btncalcular;
         private Button btnlimpiar;
-        private Button button1;
+        private Button btnconsultar;
+        private ListBox lstconsultar;
     }
 }

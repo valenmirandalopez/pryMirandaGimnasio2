@@ -110,8 +110,8 @@ namespace pryMirandaGimnasio
             }
         }
 
- 
-       
+
+
 
         private void txtedad_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -188,7 +188,7 @@ namespace pryMirandaGimnasio
 
 
             //plan segun lo seleccionado
-            
+
             switch (cboplan.Text)
             {
                 case "Musculación":
@@ -204,12 +204,12 @@ namespace pryMirandaGimnasio
                     precioMensual = 0;
                     break;
 
-                             
-                        
+
+
             }
 
             string descripcionTurno = "";
-             
+
             //turno segun lo seleccionado
             switch (cboturno.SelectedIndex)
             {
@@ -234,10 +234,10 @@ namespace pryMirandaGimnasio
                 precioCasilleroTotal = PRECIO_CASILLERO;
             }
 
-            
+
             subtotal = (precioMensual + precioCasilleroTotal) * meses;
 
-           
+
             if (chkestudiante.Checked || edad >= 60)
             {
                 porcentajeDescuento = 0.20m; // 20% de descuento
@@ -246,7 +246,7 @@ namespace pryMirandaGimnasio
             decimal montoDescuento = subtotal * porcentajeDescuento;
             decimal subtotalConDescuento = subtotal - montoDescuento;
 
-            
+
             if (rbtefectivo.Checked)
             {
                 porcentajeAjustePago = -0.10m; // 10% de descuento en efectivo
@@ -269,14 +269,14 @@ namespace pryMirandaGimnasio
 
             decimal montoAjustePago = subtotalConDescuento * porcentajeAjustePago;
 
-       
+
             total = subtotalConDescuento + montoAjustePago;
 
-           
+
             int cantidadCuotas = 1;
             if (!rbtefectivo.Checked && cbocuotas.SelectedIndex != -1)
             {
-            
+
                 cantidadCuotas = int.Parse(cbocuotas.SelectedItem.ToString());
             }
 
@@ -294,6 +294,15 @@ namespace pryMirandaGimnasio
             socio.meses = meses;
             socio.total = total;
             socio.valorCuota = valorCuota;
+
+            // GRABAR EN UN TXT
+            StreamWriter swDatosGym = new StreamWriter("BaseDatos.txt", true);
+               swDatosGym.WriteLine(socio.nombre);
+                swDatosGym.WriteLine(socio.plan);
+            swDatosGym.WriteLine(socio.valorCuota);
+            swDatosGym.WriteLine(socio.total);
+
+            swDatosGym.Close();
 
             //Grabar array
             //Concatenar lo que tengo en el struct
@@ -351,6 +360,38 @@ namespace pryMirandaGimnasio
 
         }
 
+        private void lstconsultar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnconsultar_Click(object sender, EventArgs e)
+        {
+            for (int indice = 0; indice < vecSocio.Length; indice++)
+            {
+
+                if (vecSocio[indice] != null)
+                {
+                    lstconsultar.Items.Add(vecSocio[indice]);
+                }
+
+            }
+        }
+
+        private void rbttarjeta_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbttarjeta.Checked)
+            {
+                cbocuotas.Enabled = true;
+                cbocuotas.SelectedIndex= 0;
+            }
+            else
+            {
+                cbocuotas.Enabled=false;
+                cbocuotas.SelectedIndex = -1;
+            }
+
+        }
     }
 }
 
